@@ -1,13 +1,13 @@
 {% extends "_base.html" %}
 
-{% block page_title %}Books Create{{ book.title }}{% endblock %}
+{% block page_title %}Book edit{{ book.title }}{% endblock %}
 
 {% block content %}
     <h1>Create a new book</h1>
     <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-success" type="submit">Add</button>
+        <button class="btn btn-success" type="submit">Save</button>
         <br>
     </form>
     <a href="{% url 'book_list' %}">Books List</a>

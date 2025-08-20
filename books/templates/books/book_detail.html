@@ -7,6 +7,7 @@
     <p>{{ book.description }}</p>
     <p>{{ book.author }}</p>
     <p>{{ book.price }}</p>
+    <a href="{% url 'book_update' book.id %}"><button type="submit", class="btn btn-info">Edit</button></a>
     <br>
     <a href="{% url 'book_list' %}">Books List</a>
 {% endblock %}
