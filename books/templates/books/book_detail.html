@@ -1,9 +1,12 @@
 {% extends "_base.html" %}
 
 {% block page_title %}Books detail{{ book.title }}{% endblock %}
-
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 {% block content %}
-<div class="container mt-5" dir="rtl">
+<div class="container mt-5" dir="ltr">
     <div class="">
         <div class="text-start">
             <div class="d-flex justify-content-center">

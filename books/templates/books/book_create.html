@@ -1,14 +1,38 @@
 {% extends "_base.html" %}
 
-{% block page_title %}Books Create{{ book.title }}{% endblock %}
+{% load crispy_forms_tags %}
 
+{% block page_title %}Books Create{{ book.title }}{% endblock %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 {% block content %}
-    <h1>Create a new book</h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-success" type="submit">Add</button>
-        <br>
-    </form>
-    <a href="{% url 'book_list' %}">Books List</a>
+<div class="container mt-4" dir="ltr">
+    <div class="row">
+        <div class="col-9">
+            <div class="card shadow my-3">
+                <h5 class="card-header bg-success text-light px-5">Form</h5>
+                <div class="px-5 pt-3 pb-5 text-start">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-success mt-2">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+
+            <div class="card my-3 shadow">
+                <h5 class="card-header bg-warning text-light">Help</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        Enter book information and click Save.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
