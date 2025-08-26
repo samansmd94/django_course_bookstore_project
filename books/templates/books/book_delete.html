@@ -3,6 +3,7 @@
 {% block page_title %}Book Delete{{ book.title }}{% endblock %}
 
 {% block content %}
+<div class="container mt-4">
     <form action="" method="POST">
         {% csrf_token %}
         <h1>Delete book "{{ book.title }}"</h1>
@@ -10,4 +11,5 @@
         <input type="submit" class="btn btn-danger" value="Confirm">
     </form>
     <a href="{% url 'book_list' %}">Books List</a>
+</div>
 {% endblock %}

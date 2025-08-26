@@ -13,13 +13,16 @@
                 <div class="row w-sm-75 w-100">
                     <div class="col-xs-12 col-md-3 d-flex justify-content-center">
                         <div>
-                            <img src="https://store.darrenhardy.com/cdn/shop/products/DSC02177_1_1512x.jpg?v=1607554239"
-                                 class="img-fluid rounded-start" alt="...">
+                            {% if book.cover %}
+                            <img src="{{ book.cover.url }}" class="img-fluid rounded-start shadow" alt="...">
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6 text-center text-md-end mt-md-1 mt-4">
                         <h1>{{ book.title }}</h1>
                         <h5 class="small my-1"><span class="text-muted">Author: </span>{{ book.author }}</h5>
+                        <a type="button" class="btn btn-info" href="{% url 'book_update' book.id %}">Edit</a>
+                        <a type="button" class="btn btn-danger" href="{% url 'book_delete' book.id %}">Delete</a>
                     </div>
                     <div class="col-xs-12 col-md-3 d-flex flex-column">
                         <h3 class="align-self-center pt-2 text-muted align-self-md-end">

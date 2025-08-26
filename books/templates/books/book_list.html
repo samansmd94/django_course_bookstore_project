@@ -12,8 +12,9 @@
         <div class="card m-2" style="max-width: 45%">
             <div class="row g-0 h-100" dir="ltr">
                 <div class="col-md-4">
-                    <img src="https://store.darrenhardy.com/cdn/shop/products/DSC02177_1_1512x.jpg?v=1607554239"
-                         class="img-fluid rounded-start" alt="...">
+                    {% if book.cover %}
+                        <img src="{{ book.cover.url }}" class="img-fluid rounded-start shadow" alt="...">
+                    {% endif %}
                 </div>
                 <div class="col-md-8 h-100">
                     <div class="d-flex flex-column justify-content-between h-100">
